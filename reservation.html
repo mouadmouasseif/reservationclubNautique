@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <title>Reservation d'activités</title>
+    <link rel="stylesheet" type="text/css" href="Css/styles.css">
+    <script src="script.js"></script>
+   
+</head>
+<body>
+    <div class="container">
+        <center><img src="img/club-logo.png" class="logo" alt="Logo du club"> </center>
+        <h1>Reservation d'activites</h1>
+        
+        <form action="reservation.php" method="post">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required><br>
+      
+            <label for="prenom">Prenom :</label>
+            <input type="text" id="prenom" name="prenom" required><br>
+      
+            <label for="telephone">Numero de telephone :</label>
+            <input type="text" id="telephone" name="telephone" required><br>
+      
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required><br>
+      
+            <label for="activite">Activité :</label>
+            <select id="activite" name="activite" onchange="updatePrice(); updateHours()" required>
+                <option value="kayak">Kayak</option>
+                <option value="paddel">Paddle</option>
+                <option value="catamaran">Catamaran</option>
+                <option value="surf">Surf</option>
+            </select><br>
+            
+            <label for="date">Date de reservation :</label>
+            <input type="date" id="date" name="date" required><br>
+            
+            <label for="heure">Heure de reservation :</label>
+            <select id="heure" name="heure" onchange="updateHours()" required></select><br>
+            
+            <label for="nombre_personnes">Nombre de personnes :</label>
+            <input type="number" id="nombre_personnes" name="nombre_personnes" min="1" value="1" onchange="updatePrice()" required><br>
+            
+            <label for="prix">Prix<span>/par personne</span> :</label>
+            <span id="prix"></span><br>
+            
+            <center><input type="submit" value="Réserver"></center>
+        </form>
+    </div>
+</body>
+</html>
